@@ -1,5 +1,5 @@
 
-# Statement
+# Problem statement
 
 I installed a fresh ubuntu 20.04.3 LTS from scratch beginning of Nov 2021. The distribution used the nvidia-driver version 470 from the ubuntu non-free section.
 
