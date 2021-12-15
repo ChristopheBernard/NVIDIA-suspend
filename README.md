@@ -187,3 +187,32 @@ sudo sed -i "s/^\(GRUB_CMDLINE_LINUX=.*\)\"$/\1 acpi_osi=! \\\\\"acpi_osi=$VERSI
 sudo update-grub
 echo "Modified Command Line: ` config `"
 ```
+
+# Later additions
+
+## nvidia-config choices
+
+To make safer choices, you can setup the card using nvidia-config. The config file can then be imposed globally. See an example `/etc/X11/xinit/xinitrc`:
+
+```
+#!/bin/sh
+
+# /etc/X11/xinit/xinitrc
+#
+# global xinitrc file, used by all X sessions started by xinit (startx)
+
+/usr/bin/nvidia-settings --load-config-only --config=/etc/X11/xinit/nvidia-settings-rc & ### -< HERE
+# invoke global X session script
+. /etc/X11/Xsession
+
+```
+
+## Wayland font crap
+
+See https://bugs.launchpad.net/ubuntu/+source/mesa/+bug/1760201.
+
+The solution is to edit `/etc/gdm3/custom.conf` and uncomment the following line:
+
+```
+WaylandEnable=false
+```
