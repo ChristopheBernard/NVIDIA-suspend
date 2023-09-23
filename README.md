@@ -188,6 +188,11 @@ sudo update-grub
 echo "Modified Command Line: ` config `"
 ```
 
+# Latest verifications
+
+Worked with nvidia version:
+* Driver Version: 535.104.05   CUDA Version: 12.2 (Ubuntu 22.04.3)
+
 # Later additions
 
 ## nvidia-config choices
